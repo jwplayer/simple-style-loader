@@ -1,0 +1,19 @@
+{
+  "name": "simple-style-loader",
+  "version": "0.1.0",
+  "description": "simplified style loader module for webpack based on style-loader by Tobias Koppers @sokra",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jwplayer/simple-style-loader.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jwplayer/simple-style-loader/issues"
+  },
+  "homepage": "https://github.com/jwplayer/simple-style-loader",
+  "dependencies": {
+    "loader-utils": "^0.2.7"
+  }
+}
