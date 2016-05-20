@@ -87,7 +87,7 @@ define(function (require, exports, module) {/*
 	function createStyleElement(playerId) {
 		var styleElement = document.createElement("style");
 		styleElement.type = "text/css";
-		styleElement.setAttribute('data-playerId', playerId);
+		styleElement.setAttribute('data-jwplayer-id', playerId);
 		insertStyleElement(styleElement);
 		return styleElement;
 	}
