@@ -22,7 +22,7 @@ define(function (require, exports, module) {/*
 	};
 
 	function style (list, playerId) {
-		addStylesToDom(listToStyles(list), playerId);
+		addStylesToDom(playerId, listToStyles(list));
 	}
 
 	function clear (playerId) {
