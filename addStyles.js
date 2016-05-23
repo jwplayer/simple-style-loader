@@ -21,7 +21,7 @@ define(function (require, exports, module) {/*
 		clear: clear
 	};
 
-	function style (playerId, list) {
+	function style (list, playerId) {
 		addStylesToDom(playerId, listToStyles(list));
 	}
 
