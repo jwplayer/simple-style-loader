@@ -12,9 +12,9 @@ var loaderUtils = require("loader-utils"),
 		"",
 		"// load the styles",
 		"var content = require(" + loaderUtils.stringifyRequest(this, "!!" + remainingRequest) + ");",
-		"if(typeof content === 'string') content = [[module.id, content, '']];",
+		"if(typeof content === 'string') content = [['all-players', content, '']];",
 		"// add the styles to the DOM",
-		"require(" + loaderUtils.stringifyRequest(this, "!" + path.join(__dirname, "addStyles.js")) + ").style(module.id, content);",
+		"require(" + loaderUtils.stringifyRequest(this, "!" + path.join(__dirname, "addStyles.js")) + ").style(content,'all-players');",
 		"if(content.locals) module.exports = content.locals;"
 	].join("\n");
 };
