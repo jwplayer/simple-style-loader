@@ -1,6 +1,6 @@
 {
   "name": "simple-style-loader",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "simplified style loader module for webpack based on style-loader by Tobias Koppers @sokra",
   "scripts": {},
   "repository": {
