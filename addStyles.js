@@ -25,9 +25,19 @@ define(function (require, exports, module) {/*
 		addStylesToDom(playerId, listToStyles(list));
 	}
 
-	function clear (playerId) {
+	function clear (playerId, selector) {
 		var playerStyles = stylesInDom[playerId];
 		if (!playerStyles) {
+			return;
+		}
+		if (selector) {
+			// delete all rules for a specific selector
+			var ruleObj = playerStyles[selector];
+			if (ruleObj) {
+				for (var h = 0; h < ruleObj.parts.length; h += 1) {
+					ruleObj.parts[h]();
+				}
+			}
 			return;
 		}
 		var styleKeys = Object.keys(playerStyles);
