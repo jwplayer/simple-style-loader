@@ -147,9 +147,9 @@ define(function (require, exports, module) {/*
 		} else {
 			var cssNode = document.createTextNode(css);
 			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
+			var child = childNodes[index];
+			if (child) {
+				styleElement.replaceChild(cssNode, child);
 			} else {
 				styleElement.appendChild(cssNode);
 			}
