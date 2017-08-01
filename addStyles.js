@@ -119,7 +119,7 @@ define(function (require, exports, module) {/*
 			applyToSingletonTag(styleElement, styleIndex, css);
         };
 		remove = function() {
-			applyToSingletonTag(styleElement, styleIndex);
+			applyToSingletonTag(styleElement, styleIndex, '');
         };
 
 		update(obj.css);
