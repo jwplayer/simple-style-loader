@@ -115,16 +115,21 @@ define(function (require, exports, module) {/*
 
 		var styleIndex = singleton.counter++;
 		styleElement = singleton.element;
-		update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-		remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		update = function(css) {
+			applyToSingletonTag(styleElement, styleIndex, css);
+        };
+		remove = function() {
+			applyToSingletonTag(styleElement, styleIndex);
+        };
 
-		update(obj);
+		update(obj.css);
 
 		return function updateStyle(newObj) {
 			if(newObj) {
 				if(newObj.css === obj.css && newObj.media === obj.media)
 					return;
-				update(obj = newObj);
+                obj = newObj;
+				update(obj.css);
 			} else {
 				remove();
 			}
@@ -140,8 +145,7 @@ define(function (require, exports, module) {/*
 		};
 	})();
 
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
+	function applyToSingletonTag(styleElement, index, css) {
 		if (styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = replaceText(index, css);
 		} else {
