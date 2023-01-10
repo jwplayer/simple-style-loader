@@ -53,6 +53,16 @@ function clear (playerId, selector) {
 		}
 	}
 	delete stylesInDom[playerId];
+
+	if (playerStyleElements[playerId]) {
+		var playerStyleEl = playerStyleElments[playerId].element;
+
+		if (playerStyleEl && playerStyleEl.parentElement) {
+			playerStyleEl.parentElement.removeChild(playerStyleElement);
+		}
+		delete playerStyleElements[playerId];
+	}
+
 }
 
 function addStylesToDom(playerId, styles) {
