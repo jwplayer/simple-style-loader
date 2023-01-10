@@ -41,6 +41,7 @@ function clear (playerId, selector) {
 			for (var h = 0; h < ruleObj.parts.length; h += 1) {
 				ruleObj.parts[h]();
 			}
+			delete playerStyles[selector];
 		}
 		return;
 	}
